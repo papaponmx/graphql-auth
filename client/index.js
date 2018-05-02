@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ApollloClient from 'apollo-client';
 import { ApolloProvider } from 'react-apollo';
+import { Router, hashHistory, Route, IndexRoute } from 'react-router';
+import App from './components/app';
 
 const client = new ApollloClient({
   dataIdFromObject: o => o.id
@@ -10,9 +12,11 @@ const client = new ApollloClient({
 const Root = () => {
   return (
     <ApolloProvider client={client}>
-      <div>
-        Auth Starter
-      </div>
+      <Router history={hashHistory}>
+        <Route path="/" component={App}>
+
+        </Route>
+      </Router>
     </ApolloProvider>
   );
 };
