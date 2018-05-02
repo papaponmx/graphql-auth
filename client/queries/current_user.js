@@ -1,6 +1,6 @@
 import gql from 'graphql-tag';
 
-export defaut gql`
+export default gql`
     {
       user {
         id
