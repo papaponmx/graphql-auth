@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
+import { graphql } from 'react-apollo';
+import query from '../../queries/current_user';
 
-export default class Header extends Component {
+class Header extends Component {
+  componentWillMount() {
+  }
+
   render() {
+    console.log(this.props.data);
+
     return (
       <div>
         Header
@@ -9,3 +16,5 @@ export default class Header extends Component {
     )
   }
 }
+
+export default graphql(query)(Header);
