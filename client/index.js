@@ -13,6 +13,7 @@ const networkInterface = createNetworkInterface({
 });
 
 const client = new ApollloClient({
+  networkInterface,
   dataIdFromObject: o => o.id
 });
 
