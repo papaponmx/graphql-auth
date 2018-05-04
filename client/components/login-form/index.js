@@ -18,7 +18,7 @@ class LoginForm extends Component {
     }).catch( res => {
       const errors = res.graphQLErrors.map(error => error.message);
       this.setState({ errors });
-      ;
+      
     });
   }
 
