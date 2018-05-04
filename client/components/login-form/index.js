@@ -1,14 +1,21 @@
 import React, { Component } from 'react';
 import AuthForm from '../auth-form';
 import mutation from '../../mutations/login';
-import { grapqhl } from 'react-apollo';
+import { graphql } from 'react-apollo';
 
 class LoginForm extends Component {
+  onSubmit({email, password}) {
+    this.props.mutate({
+      variables: { email, password }
+    });
+  }
+
   render() {
     return (
       <div>
         <h3> Login</h3>
         <AuthForm
+          onSubmit={this.onSubmit.bind(this)}
         />
       </div>
     )
