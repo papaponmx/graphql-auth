@@ -6,7 +6,11 @@ import mutation from '../../mutations/logout';
 
 class Header extends Component {
   onLogoutClick() {
-
+    this.props.mutate({
+      refetchQueries:[{
+        query,
+      }]
+    });
   }
 
   renderButtons(){
