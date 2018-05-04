@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import AuthForm from '../auth-form';
+import mutation from '../../mutations/login';
+import { grapqhl } from 'react-apollo';
 
-export default class LoginForm extends Component {
+class LoginForm extends Component {
   render() {
     return (
       <div>
@@ -12,3 +14,5 @@ export default class LoginForm extends Component {
     )
   }
 }
+
+export default graphql(mutation)(LoginForm);
